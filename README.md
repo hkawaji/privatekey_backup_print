@@ -1,4 +1,4 @@
-# Print privatekey
+# Privatekey print
 
 This is a utility to print GnuPG private key for very long term backup
 (on a printed material).
