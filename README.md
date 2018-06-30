@@ -1,6 +1,6 @@
 # Privatekey print
 
-This is a utility to print GnuPG private key for very long term backup
+This is a utility to print GnuPG private keys for very long term backup
 (on a printed material).
 
 Secret keys (incl. primary and sub keys) are exported as a HTML file
