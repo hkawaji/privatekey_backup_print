@@ -198,6 +198,7 @@ print_key_armor ${k}.html
 print_key_base16 ${k}.html
 print_key_qrcode ${k}.html
 printf "</body></html>\n" >> ${k}.html
+chmod go-rwx ${k}.html
 
 mv -f ${k}.html ${OUTFILE}
 shred --remove ${k}.base64_*
