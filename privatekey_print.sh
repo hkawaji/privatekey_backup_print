@@ -3,7 +3,7 @@
 
 # default param
 BYTE=512
-OUTFILE=secret-key.html
+OUTFILE=privatekey-for-print.html
 
 
 ########################
@@ -13,7 +13,7 @@ function usage()
 {
   cat <<EOF
 
-Generate a HTML file to backup GnuPG secret keys (for printing on paper).
+Generate a HTML file to backup GnuPG private keys (for printing on paper).
 
   $0 [-b BYTE(default:${BYTE})] [-o OUTDIR(default:${OUTDIR}) ]
 
@@ -57,7 +57,7 @@ function print_introduction()
 <h2> Backup material of GnuPG private key </h2>
 
 <p>
-This HTML file is generated to backup GnuPG secret key, by using <q> $0 </q>.
+This HTML file is generated to backup GnuPG private key, by using <q> $0 </q>.
 It contains:
 </p>
 
@@ -149,6 +149,7 @@ function print_key_qrcode()
   printf "\n\n<h3> Keys in QR code</h3>\n<pre>\n" >> ${outfile}
   for X in ${OUTDIR}/*.png 
   do
+    xbase=$(basename $X .png)
     img_data=$( base64 ${X} )
     printf "<h4>$xbase</h4><img src='data:image/png;base64,${img_data}' />\n" >> ${outfile}
   done
